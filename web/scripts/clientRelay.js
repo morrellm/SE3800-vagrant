@@ -44,12 +44,14 @@ function draw(pointList) {
 
             if (context !== null) {
                 context.fillStyle = "white";
-                context.fillRect(0, 0, 70, 70);
+                context.clearRect(0, 0, canvasElem.width, canvasElem.height);
+                context.beginPath();
                 context.moveTo(pointList[0].x, pointList[0].y);
                 for (var i = 1; i < pointList.length; i++) {
                     context.lineTo(pointList[i].x, pointList[i].y);
                 }
                 context.lineTo(pointList[0].x, pointList[0].y);
+                context.closePath();
                 context.stroke();
             } else {
                 console.log("Canvas is not supported by this browser.");
