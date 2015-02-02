@@ -2,7 +2,7 @@
 echo "Directory: '" . __DIR__ . "'\n";
 function dirMoveAllFiles($srcDir, $destDir)
 {
-    $src = @opendir($srcDir);
+    $src = opendir($srcDir);
     if ($src === false) {
         return false;
     }
@@ -10,12 +10,12 @@ function dirMoveAllFiles($srcDir, $destDir)
     {
         if (strpos($entry, ".") !== 0)
         {
-            $contents = @file_get_contents("$srcDir/$entry");
+            $contents = file_get_contents("$srcDir/$entry");
             if ($contents !== false)
             {
-                $result = @fopen("$destDir/$entry", "c+");
+                $result = fopen("$destDir/$entry", "c+");
                 $result = !!$result && fclose($result);
-                $result &= @file_put_contents("$destDir/$entry", $contents);
+                $result &= file_put_contents("$destDir/$entry", $contents);
             }
             else
             {
