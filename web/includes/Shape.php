@@ -47,4 +47,18 @@ class Shape
     {
         return json_encode($this->pointList);
     }
+
+    public static function MakeShape($sides, $length, $rotation)
+    {
+        $newShape = new Shape();
+        for($i = 0; $i < $sides; $i++)
+        {
+            $newShape->
+            AddPoint(
+                $length * cos( deg2rad($i * (360 / $sides) + $rotation) ) + $length + 5,
+                $length * sin( deg2rad($i * (360 / $sides) + $rotation) ) + $length + 5
+            );
+        }
+        return $newShape;
+    }
 }
