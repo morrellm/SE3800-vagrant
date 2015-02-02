@@ -1,7 +1,7 @@
 <?php
 function dirMoveAllFiles($srcDir, $destDir)
 {
-    $src = opendir($srcDir);
+    $src = @opendir($srcDir);
     if ($src === false) {
         return false;
     }
@@ -37,9 +37,9 @@ function dirMoveAllFiles($srcDir, $destDir)
     return true;
 }
 
-$unitResult = dirMoveAllFiles("web/dev_tests/unit", "web/tests/unit");
-$functResult = dirMoveAllFiles("web/dev_tests/functional", "web/tests/functional");
-$acceptResult = dirMoveAllFiles("web/dev_tests/acceptance", "web/tests/acceptance");
+$unitResult = dirMoveAllFiles("unit", "web/tests/unit");
+$functResult = dirMoveAllFiles("functional", "web/tests/functional");
+$acceptResult = dirMoveAllFiles("acceptance", "web/tests/acceptance");
 
 if ($unitResult === false || $functResult === false || $acceptResult === false)
 {
