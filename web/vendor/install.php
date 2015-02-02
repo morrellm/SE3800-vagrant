@@ -32,6 +32,7 @@ function install($src, $destFilename)
                 }
                 else
                 {
+                    echo "Successfully installed $destFilename";
                     @fclose($destHandle);
                 }
 

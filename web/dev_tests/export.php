@@ -1,5 +1,5 @@
 <?php
-echo __DIR__ . "\n";
+echo "Directory: '" . __DIR__ . "'\n";
 function dirMoveAllFiles($srcDir, $destDir)
 {
     $src = @opendir($srcDir);
