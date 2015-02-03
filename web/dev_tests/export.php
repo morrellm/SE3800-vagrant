@@ -1,7 +1,7 @@
 <?php
 function dirMoveAllFiles($srcDir, $destDir)
 {
-    $src = opendir($srcDir);
+    $src = @opendir($srcDir);
     if ($src === false) {
         return false;
     }
@@ -44,6 +44,6 @@ $acceptResult = dirMoveAllFiles("dev_tests/acceptance", "tests/acceptance");
 if ($unitResult === false || $functResult === false || $acceptResult === false)
 {
     echo "Failure to migrate the following directories: \n";
-    echo ($unitResult ? "\t- Unit\n" : "") . ($functResult ? "\t- Functional\n" : "") . ($acceptResult ? "\t- Acceptance\n" : "");
+    echo (!$unitResult ? "\t- Unit\n" : "") . (!$functResult ? "\t- Functional\n" : "") . (!$acceptResult ? "\t- Acceptance\n" : "");
 }
 ?>
