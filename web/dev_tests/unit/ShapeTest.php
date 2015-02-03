@@ -1,5 +1,5 @@
 <?php
-require 'includes/Shape.php';
+require '../includes/Shape.php';
 /**
  * Created by PhpStorm.
  * User: Mitchell
