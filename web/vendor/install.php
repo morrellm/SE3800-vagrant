@@ -42,6 +42,6 @@ function install($src, $destFilename)
 }
 
 //codeception install
-install("http://codeception.com/codecept.phar", "web/vendor/codecept.phar");
+install("http://codeception.com/codecept.phar", "vendor/codecept.phar");
 
 ?>
