@@ -5,10 +5,12 @@ php:
   - 5.4
 
 before_script:
-  - cd web
-  - php vendor/install.php
-  - php vendor/codecept.phar bootstrap
-  - php vendor/codecept.phar build
-  - php dev_tests/export.php
+  - cd web/vendor
+  - php install.php
+  - php codecept.phar bootstrap
+  - php codecept.phar build
+  - cd ../dev_tests
+  - php export.php
+  - cd ../vendor
 
-script: php vendor/codecept.phar run
+script: php codecept.phar run

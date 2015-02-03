@@ -37,9 +37,9 @@ function dirMoveAllFiles($srcDir, $destDir)
     return true;
 }
 
-$unitResult = dirMoveAllFiles("dev_tests/unit", "tests/unit");
-$functResult = dirMoveAllFiles("dev_tests/functional", "tests/functional");
-$acceptResult = dirMoveAllFiles("dev_tests/acceptance", "tests/acceptance");
+$unitResult = dirMoveAllFiles("unit", "../vendor/tests/unit");
+$functResult = dirMoveAllFiles("functional", "../vendor/tests/functional");
+$acceptResult = dirMoveAllFiles("acceptance", "../vendor/tests/acceptance");
 
 if ($unitResult === false || $functResult === false || $acceptResult === false)
 {
