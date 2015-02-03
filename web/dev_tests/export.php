@@ -37,13 +37,13 @@ function dirMoveAllFiles($srcDir, $destDir)
     return true;
 }
 
-$unitResult = dirMoveAllFiles("web/dev_tests/unit", "tests/unit");
-$functResult = dirMoveAllFiles("web/dev_tests/functional", "tests/functional");
-$acceptResult = dirMoveAllFiles("web/dev_tests/acceptance", "tests/acceptance");
+$unitResult = dirMoveAllFiles("dev_tests/unit", "tests/unit");
+$functResult = dirMoveAllFiles("dev_tests/functional", "tests/functional");
+$acceptResult = dirMoveAllFiles("dev_tests/acceptance", "tests/acceptance");
 
 if ($unitResult === false || $functResult === false || $acceptResult === false)
 {
-    echo "Failure to migrate one or more test directories!
-        (Unit: " . $unitResult . ", Functional: " . $functResult . ", Acceptance: " . $acceptResult . ")\n";
+    echo "Failure to migrate the following directories: \n";
+    echo ($unitResult ? "\t- Unit\n" : "") . ($functResult ? "\t- Functional\n" : "") . ($acceptResult ? "\t- Acceptance\n" : "");
 }
 ?>
