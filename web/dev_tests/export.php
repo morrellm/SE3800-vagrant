@@ -9,10 +9,10 @@ function dirMoveAllFiles($srcDir, $destDir)
     {
         if (strpos($entry, ".") !== 0)
         {
-            $contents = file_get_contents("$srcDir/$entry");
+            $contents = @file_get_contents("$srcDir/$entry");
             if ($contents !== false)
             {
-                $result = fopen("$destDir/$entry", "c+");
+                $result = @fopen("$destDir/$entry", "c+");
                 $result = !!$result && fclose($result);
                 $result &= @file_put_contents("$destDir/$entry", $contents);
             }
