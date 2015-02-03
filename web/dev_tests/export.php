@@ -1,5 +1,4 @@
 <?php
-echo "Directory: '" . __DIR__ . "'\n";
 function dirMoveAllFiles($srcDir, $destDir)
 {
     $src = opendir($srcDir);
@@ -15,7 +14,7 @@ function dirMoveAllFiles($srcDir, $destDir)
             {
                 $result = fopen("$destDir/$entry", "c+");
                 $result = !!$result && fclose($result);
-                $result &= file_put_contents("$destDir/$entry", $contents);
+                $result &= @file_put_contents("$destDir/$entry", $contents);
             }
             else
             {
@@ -38,13 +37,13 @@ function dirMoveAllFiles($srcDir, $destDir)
     return true;
 }
 
-$unitResult = dirMoveAllFiles("unit", "web/tests/unit");
-$functResult = dirMoveAllFiles("functional", "web/tests/functional");
-$acceptResult = dirMoveAllFiles("acceptance", "web/tests/acceptance");
+$unitResult = dirMoveAllFiles("web/dev_tests/unit", "tests/unit");
+$functResult = dirMoveAllFiles("web/dev_tests/functional", "tests/functional");
+$acceptResult = dirMoveAllFiles("web/dev_tests/acceptance", "tests/acceptance");
 
 if ($unitResult === false || $functResult === false || $acceptResult === false)
 {
     echo "Failure to migrate one or more test directories!
-        (Unit: " . !!$unitResult . ", Functional: " . !!$functResult . ", Acceptance: " . !!$acceptResult . ")\n";
+        (Unit: " . $unitResult . ", Functional: " . $functResult . ", Acceptance: " . $acceptResult . ")\n";
 }
 ?>
