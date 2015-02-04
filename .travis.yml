@@ -7,10 +7,7 @@ php:
 before_script:
   - cd web/vendor
   - php install.php
-  - php codecept.phar bootstrap
-  - php codecept.phar build
-  - cd ../dev_tests
-  - php export.php
-  - cd ../vendor
+  - php codecept.phar bootstrap ../dev_tests
+  - php codecept.phar -c ../dev_tests
 
 script: php codecept.phar run

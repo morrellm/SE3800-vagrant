@@ -28,11 +28,11 @@ function install($src, $destFilename)
 
                 if ($result === false)
                 {
-                    echo "Failed to write downloaded $destFilename to a file";
+                    echo "Failed to write downloaded $destFilename to a file\n";
                 }
                 else
                 {
-                    echo "Successfully installed $destFilename";
+                    echo "Successfully installed $destFilename\n";
                     @fclose($destHandle);
                 }
 
@@ -43,5 +43,6 @@ function install($src, $destFilename)
 
 //codeception install
 install("http://codeception.com/codecept.phar", "codecept.phar");
+install("http://xdebug.org/files/php_xdebug-2.2.7-5.4-vc9.dll", "xdebug.dll");
 
 ?>
