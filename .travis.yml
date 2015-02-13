@@ -7,10 +7,5 @@ php:
 before_script:
   - cd web/vendor
   - php install.php
-  - php codecept.phar bootstrap
-  - cd ../dev_tests
-  - php export.php
-  - cd ../vendor
-  - php codecept.phar run
 
-script: php codecept.phar run
+script: php phpunit.phar --coverage-html UnitTest ../dev_tests/unit
