@@ -43,6 +43,6 @@ function install($src, $destFilename)
 
 //codeception install
 install("https://phar.phpunit.de/phpunit.phar", "phpunit.phar");
-//install("http://xdebug.org/files/php_xdebug-2.2.7-5.4-vc9.dll", "xdebug.dll");
+install("https://scrutinizer-ci.com/ocular.phar", "ocular.phar");
 
 ?>
