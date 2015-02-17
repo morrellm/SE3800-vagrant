@@ -3,15 +3,14 @@ class MainPageTest extends PHPUnit_Extensions_SeleniumTestCase
 {
     protected function setUp()
     {
-        $this->setBrowser('firefox');
+        $this->setBrowser('*firefox');
         $this->setBrowserUrl('http://www.example.com/');
     }
 
     public function testTitle()
     {
-        $this->url('http://www.example.com/');
-        $this->assertEquals('Example Domain', $this->title());
+        $this->open('http://www.example.com/');
+        $this->assertTitle('Example Domain');
     }
 
 }
-?>
