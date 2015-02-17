@@ -1,6 +1,4 @@
 <?php
-require_once '../../vendor/phpunit.phar/Extensions/SeleniumTestCase.php';
-
 class MainPageTest extends PHPUnit_Extensions_SeleniumTestCase
 {
     protected function setUp()
