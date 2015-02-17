@@ -7,7 +7,8 @@ php:
 before_script:
   - cd web/vendor
   - php install.php
+  - java -jar selenium-server.jar
 
 script:
-  - php phpunit.phar --coverage-clover coverage.clover ../dev_tests/unit
+  - php phpunit.phar --coverage-clover coverage.clover ../dev_tests
   - php ocular.phar code-coverage:upload --access-token="65dc12c9b6b29e90cab660b0fe91064091d641047efdbde1d0a731a8c91a54c5" --format=php-clover coverage.clover

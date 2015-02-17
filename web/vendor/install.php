@@ -44,5 +44,9 @@ function install($src, $destFilename)
 //codeception install
 install("https://phar.phpunit.de/phpunit.phar", "phpunit.phar");
 install("https://scrutinizer-ci.com/ocular.phar", "ocular.phar");
-
+install
+(
+    "http://selenium-release.storage.googleapis.com/2.44/selenium-server-standalone-2.44.0.jar",
+    "selenium-server.jar"
+);
 ?>
