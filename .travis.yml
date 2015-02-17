@@ -7,7 +7,7 @@ php:
 before_script:
   - cd web/vendor
   - php install.php
-  - java -jar selenium-server.jar
+  - java -jar selenium-server.jar &
 
 script:
   - php phpunit.phar --coverage-clover coverage.clover ../dev_tests
