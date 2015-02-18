@@ -35,6 +35,9 @@ if ($validRequest)
         case 'octogon':
             $createdShape = Shape::MakeShape(8, $length, 23);
             break;
+        case 'nonagon':
+            $createdShape = Shape::MakeShape(9, $length, 30);
+            break;
         case 'circle':
             $createdShape = Shape::MakeShape(360, $length, 0);
             break;
