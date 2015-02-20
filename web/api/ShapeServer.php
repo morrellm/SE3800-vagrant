@@ -53,6 +53,6 @@ if ($validRequest)
 }
 else
 {
-    echo "{'message': 'Invalid Request'}";
+    echo "{\"message\": \"Invalid Request\"}";
 }
 ?>

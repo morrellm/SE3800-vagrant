@@ -7,6 +7,7 @@ php:
 before_script:
   - cd web/vendor
   - php install.php
+  - php -S localhost:80 -t ../../web &
 
 script:
   - php phpunit.phar --coverage-clover coverage.clover ../dev_tests
