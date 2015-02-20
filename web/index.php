@@ -21,9 +21,9 @@
             <button onclick="requestShape('hexagon', 70)">Draw a Hexagon!</button>
             <button onclick="requestShape('septagon', 70)">Draw a Septagon!</button>
             <button onclick="requestShape('octogon', 70)">Draw a Ocotogon!</button>
+            <button onclick="requestShape('decagon', 70)">Draw a Decagon!</button>
             <button onclick="requestShape('circle', 70)">Draw a Circle!</button>
             <button onclick="requestShape('supershape', 70)">Draw a Super-Shape!</button>
-
         </div>
         <canvas id="outputPane">
         </canvas>
