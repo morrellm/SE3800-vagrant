@@ -8,7 +8,7 @@
 
 class ShapeApiTest extends PHPUnit_Framework_TestCase {
 
-    private $urlToTest = "http://localhost/api/ShapeServer.php";
+    private $urlToTest = "http://localhost:8080/api/ShapeServer.php";
     function testValidShape()
     {
         $result = ShapeApiTest::post($this->urlToTest, array("shape" => "square", "sideLength" => 7));
